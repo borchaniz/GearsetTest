@@ -9,9 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- itext version property -->
         <itext.version>RELEASE</itext.version>
     </properties>
+
     <dependencies>
+        <!--itext dependency-->
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itext7-core</artifactId>
