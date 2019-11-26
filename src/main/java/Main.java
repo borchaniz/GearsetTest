@@ -1,23 +1,23 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
+
     public static void main(String[] args) {
         String strLine = "";
         try {
+            PDFDocProcessor docProcessor = new PDFDocProcessor("./document.pdf");
             FileInputStream fstream = new FileInputStream("input");
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             //Read File Line By Line
             while ((strLine = br.readLine()) != null) {
                 // Print the content on the console
-                System.out.println(strLine);
+                docProcessor.processLine(strLine);
             }
             //Close the input stream
             fstream.close();
+            docProcessor.finalize();
         }catch (IOException e){
-            System.out.println("IOException caught, the specified file does not exist perhaps?");
+            System.out.println("IOException caught, the specified file does not exist perhaps, or you do not have permission to write to this directory");
         }
 
     }
