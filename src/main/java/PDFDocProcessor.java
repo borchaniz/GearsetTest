@@ -4,9 +4,13 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.FileNotFoundException;
+import java.util.regex.Pattern;
 
 public class PDFDocProcessor {
     private Document document;
+    private Paragraph currentParagraph = new Paragraph();
+
+
     PDFDocProcessor(String destination) throws FileNotFoundException {
         PdfWriter writer = new PdfWriter(destination);
         PdfDocument pdfDoc = new PdfDocument(writer);
@@ -14,9 +18,27 @@ public class PDFDocProcessor {
     }
 
     void processLine(String line){
-        String para = "First Test";
-        Paragraph paragraph = new Paragraph (para);
-        document.add(paragraph);
+        if (line.equals(".paragraph") && !currentParagraph.isEmpty()){
+            document.add(currentParagraph);
+            currentParagraph = new Paragraph();
+        }else if (line.equals(".fill")){
+
+        }else if(line.equals(".nofill")){
+
+        }else if (line.equals(".regular")){
+
+        }else if (line.equals(".italic")){
+
+        }else if(line.equals(".bold")){
+
+        }else if (Pattern.matches("^\\.indent +[0-9]*",line)){
+
+        }else if (Pattern.matches("^\\.indent -[0-9]*",line)){
+
+        }else{
+
+        }
+
     }
 
     public void finalize(){
