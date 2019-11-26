@@ -31,9 +31,9 @@ public class PDFDocProcessor {
 
         }else if(line.equals(".bold")){
 
-        }else if (Pattern.matches("^\\.indent +[0-9]*",line)){
+        }else if (Pattern.matches("^\\.indent \\+[0-9]*",line)){
 
-        }else if (Pattern.matches("^\\.indent -[0-9]*",line)){
+        }else if (Pattern.matches("^\\.indent \\-[0-9]*",line)){
 
         }else{
 
