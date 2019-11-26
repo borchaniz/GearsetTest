@@ -18,6 +18,8 @@ public class Main {
             docProcessor.finalize();
         }catch (IOException e){
             System.out.println("IOException caught, the specified file does not exist perhaps, or you do not have permission to write to this directory");
+        } catch (Throwable throwable) {
+            System.out.println("An error has occured while finalizing the process of pdf creation!");
         }
 
     }
