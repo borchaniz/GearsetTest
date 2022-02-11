@@ -10,7 +10,7 @@
 
     <properties>
         <!-- itext version property -->
-        <itext.version>RELEASE</itext.version>
+        <itext.version>7.2.0</itext.version>
     </properties>
 
     <dependencies>
